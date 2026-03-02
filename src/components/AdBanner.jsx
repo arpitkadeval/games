@@ -12,7 +12,7 @@ const AdsterraAd = () => {
         };
     }, []);
 
-    return <div id="adsterra-ad-container" className='min-h-34'></div>;
+    return <div id="adsterra-ad-container" className='min-h-32'></div>;
 };
 
 export default AdsterraAd;
