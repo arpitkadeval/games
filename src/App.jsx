@@ -12,11 +12,11 @@ function App() {
     <main className="relative min-h-screen w-screen overflow-x-hidden">
       <NavBar />
       <Hero />
+      <AdBanner />
       <About />
       <Features />
       <Story />
       <Contact />
-      <AdBanner />
       <Footer />
     </main>
   );
