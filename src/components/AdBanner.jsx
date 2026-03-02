@@ -1,30 +1,18 @@
-import { useEffect, useRef } from 'react'
+import { useEffect } from 'react';
 
-export default function AdBanner() {
-    const banner = useRef()
-
-    const atOptions = {
-        key: 'd704985b48f4aef934098e1011bfd6ff',
-        format: 'iframe',
-        height: 50,
-        width: 320,
-        params: {},
-    }
-
+const AdsterraAd = () => {
     useEffect(() => {
-        if (banner.current && !banner.current.firstChild) {
-            const conf = document.createElement('script')
-            const script = document.createElement('script')
-            script.type = 'text/javascript'
-            script.src = `https://pl28827858.effectivegatecpm.com/d7/04/98/d704985b48f4aef934098e1011bfd6ff.js`
-            conf.innerHTML = `atOptions = ${JSON.stringify(atOptions)}`
+        const script = document.createElement('script');
+        script.src = 'https://pl28827858.effectivegatecpm.com/d7/04/98/d704985b48f4aef934098e1011bfd6ff.js';
+        script.async = true;
+        document.body.appendChild(script);
 
-            banner.current.append(conf)
-            banner.current.append(script)
-        }
-    }, [])
+        return () => {
+            document.body.removeChild(script);
+        };
+    }, []);
 
-    return (
-        <div className="mx-2 my-5 border border-gray-200 min-h-24 flex justify-center items-center text-white text-center" ref={banner}></div>
-    )
-}
+    return <div id="adsterra-ad-container" className='min-h-34'></div>;
+};
+
+export default AdsterraAd;
